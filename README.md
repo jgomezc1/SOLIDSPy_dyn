@@ -26,7 +26,7 @@ The _repo_ contains 3 main folders:
 3. `docs/` Documentation files including a User Manual.
 
 ## Installation
-The code is written in Python and it depends on `numpy`, `scipy` and `sympy`. To use the code just downloaded and store it in the desired folder.
+The code is written in Python and it depends on `numpy`, `scipy` and `sympy`. To use the code just download it and store it in the desired folder.
 
 To run the examples with specification of the folder storing the input files through a GUI you will need to install
 [`easygui`](http://easygui.readthedocs.org/en/master/).
@@ -45,6 +45,8 @@ After downloading, you can run an analysis in 3 easy steps:
 - Generate the text files (eles.txt, nodes.txt, mater.txt and loads.txt) required by _SolidsPydyn_ using
   a python script based on [`meshio`](https://github.com/nschloe/meshio).
 - Execute the script named ejecucion_basico.py which is available in the main folder.
+
+Youtube videos with complete step-by-step explanations are available in the Applied Mechanics channel [Applied Mechanics](https://www.youtube.com/channel/UCNhX9Z5wkEk_JhlSuIo8A4Q)
 
 ## License
 This project is licensed under the
