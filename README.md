@@ -1,4 +1,4 @@
-# SolidsPy: 2D-Finite Element Analysis with Python
+# SolidsPy_dyn: 2D Dynamic Finite Element Analysis with Python
 
 
 ![Dynamic response of V-shaped canyon.](./DOCS/images/canion.png)
