@@ -46,7 +46,7 @@ After downloading, you can run an analysis in 3 easy steps:
   a python script based on [`meshio`](https://github.com/nschloe/meshio).
 - Execute the script named ejecucion_basico.py which is available in the main folder.
 
-Youtube videos with complete step-by-step explanations are available in the Applied Mechanics channel [Applied Mechanics](https://www.youtube.com/channel/UCNhX9Z5wkEk_JhlSuIo8A4Q)
+Youtube videos with complete step-by-step explanations are available in the [Applied Mechanics](https://www.youtube.com/channel/UCNhX9Z5wkEk_JhlSuIo8A4Q) channel.
 
 ## License
 This project is licensed under the
