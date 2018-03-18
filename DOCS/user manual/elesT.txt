@@ -1,0 +1,1 @@
+ele_id   ele_tag  mat_tag   n1   n2……nN

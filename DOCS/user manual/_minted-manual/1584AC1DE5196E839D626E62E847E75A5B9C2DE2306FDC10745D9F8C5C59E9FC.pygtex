@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{c+cp}{\PYGdefaultZsh{} \PYGdefaultZhy{}*\PYGdefaultZhy{} coding: utf\PYGdefaultZhy{}8 \PYGdefaultZhy{}*\PYGdefaultZhy{}}
+\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+\PYGdefault{n}{from} \PYGdefault{n}{\PYGdefaultZus{}\PYGdefaultZus{}future\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{n}{import} \PYGdefault{n}{division}\PYGdefault{p}{,} \PYGdefault{n}{print\PYGdefaultZus{}function}
+\PYGdefault{n}{import} \PYGdefault{n}{meshio}
+\PYGdefault{n}{import} \PYGdefault{n}{numpy} \PYGdefault{n}{as} \PYGdefault{n}{np}
+\PYGdefault{n}{import} \PYGdefault{n}{solidspy}\PYGdefault{p}{.}\PYGdefault{n}{preprocesor} \PYGdefault{n}{as} \PYGdefault{n}{msh}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{points}\PYGdefault{p}{,} \PYGdefault{n}{cells}\PYGdefault{p}{,} \PYGdefault{n}{point\PYGdefaultZus{}data}\PYGdefault{p}{,} \PYGdefault{n}{cell\PYGdefaultZus{}data}\PYGdefault{p}{,} \PYGdefault{n}{field\PYGdefaultZus{}data} \PYGdefault{o}{=} \PYGdefaultZbs{}
+    \PYGdefault{n}{meshio}\PYGdefault{p}{.}\PYGdefault{n}{read}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}bimaterial.msh\PYGdefaultZdq{}}\PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{nodes\PYGdefaultZus{}array}    \PYGdefault{o}{=} \PYGdefault{n}{msh}\PYGdefault{p}{.}\PYGdefault{n}{node\PYGdefaultZus{}writer}\PYGdefault{p}{(}\PYGdefault{n}{points} \PYGdefault{p}{,} \PYGdefault{n}{point\PYGdefaultZus{}data}\PYGdefault{p}{)}
+\PYGdefault{n}{nf} \PYGdefault{p}{,} \PYGdefault{n}{els1\PYGdefaultZus{}array} \PYGdefault{o}{=} \PYGdefault{n}{msh}\PYGdefault{p}{.}\PYGdefault{n}{ele\PYGdefaultZus{}writer}\PYGdefault{p}{(}\PYGdefault{n}{cells} \PYGdefault{p}{,} \PYGdefault{n}{cell\PYGdefaultZus{}data} \PYGdefault{p}{,} \PYGdefaultZbs{}
+                  \PYGdefault{l+s}{\PYGdefaultZdq{}triangle\PYGdefaultZdq{}} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{100} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{3} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{0} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+\PYGdefault{n}{nini} \PYGdefault{o}{=} \PYGdefault{n}{nf}
+\PYGdefault{n}{nf} \PYGdefault{p}{,} \PYGdefault{n}{els2\PYGdefaultZus{}array} \PYGdefault{o}{=} \PYGdefault{n}{msh}\PYGdefault{p}{.}\PYGdefault{n}{ele\PYGdefaultZus{}writer}\PYGdefault{p}{(}\PYGdefault{n}{cells} \PYGdefault{p}{,} \PYGdefault{n}{cell\PYGdefaultZus{}data} \PYGdefault{p}{,} \PYGdefaultZbs{}
+                  \PYGdefault{l+s}{\PYGdefaultZdq{}triangle\PYGdefaultZdq{}} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{200} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{3} \PYGdefault{p}{,} \PYGdefault{l+m+mi}{1} \PYGdefault{p}{,} \PYGdefault{n}{nini}\PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{nodes\PYGdefaultZus{}array} \PYGdefault{o}{=} \PYGdefault{n}{msh}\PYGdefault{p}{.}\PYGdefault{n}{boundary\PYGdefaultZus{}conditions}\PYGdefault{p}{(}\PYGdefault{n}{cells} \PYGdefault{p}{,} \PYGdefault{n}{cell\PYGdefaultZus{}data} \PYGdefault{p}{,}\PYGdefaultZbs{}
+                  \PYGdefault{l+m+mi}{400} \PYGdefault{p}{,} \PYGdefault{n}{nodes\PYGdefaultZus{}array} \PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1} \PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+\PYGdefault{n}{els\PYGdefaultZus{}array} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{n}{append}\PYGdefault{p}{(}\PYGdefault{n}{els1\PYGdefaultZus{}array}\PYGdefault{p}{,} \PYGdefault{n}{els2\PYGdefaultZus{}array} \PYGdefault{p}{,} \PYGdefault{n}{axis} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{n}{savetxt}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}eles.txt\PYGdefaultZdq{}} \PYGdefault{p}{,} \PYGdefault{n}{els\PYGdefaultZus{}array}   \PYGdefault{p}{,} \PYGdefault{n}{fmt}\PYGdefault{o}{=}\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}d\PYGdefaultZdq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{n}{savetxt}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}nodes.txt\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{n}{nodes\PYGdefaultZus{}array} \PYGdefault{p}{,} \PYGdefault{n}{fmt}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}d\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}.4f\PYGdefaultZdq{}}\PYGdefault{p}{,}\PYGdefaultZbs{}
+           \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}.4f\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}d\PYGdefaultZdq{}}\PYGdefault{p}{,} \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZpc{}d\PYGdefaultZdq{}}\PYGdefault{p}{))}
+\end{Verbatim}

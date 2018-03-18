@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{c+cp}{\PYGdefaultZsh{}!/usr/bin/env python2}
+\PYGdefault{c+cp}{\PYGdefaultZsh{} \PYGdefaultZhy{}*\PYGdefaultZhy{} coding: utf\PYGdefaultZhy{}8 \PYGdefaultZhy{}*\PYGdefaultZhy{}}
+\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+\PYGdefault{n}{Script} \PYGdefault{n}{para} \PYGdefault{n}{realizaci}\PYGdefault{err}{ó}\PYGdefault{n}{n} \PYGdefault{n}{de} \PYGdefault{n}{un} \PYGdefault{n}{an}\PYGdefault{err}{á}\PYGdefault{n}{lisis} \PYGdefault{n}{con} \PYGdefault{n}{post}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{n}{procesamiento}\PYGdefault{p}{.}
+\PYGdefault{n}{Escribe} \PYGdefault{n}{archivos} \PYGdefault{n}{VTKs}\PYGdefault{p}{,} \PYGdefault{n}{regresa} \PYGdefault{n}{el} \PYGdefault{n}{arreglo} \PYGdefault{n}{con} \PYGdefault{n}{la} \PYGdefault{n}{histora} \PYGdefault{n}{de} \PYGdefault{n}{desplazamintos}
+\PYGdefault{n}{y} \PYGdefault{n}{grafica} \PYGdefault{n}{historias} \PYGdefault{p}{(}\PYGdefault{n}{en} \PYGdefault{n}{forma} \PYGdefault{n}{de} \PYGdefault{n}{sabanas}\PYGdefault{p}{)} \PYGdefault{n}{para} \PYGdefault{n}{los} \PYGdefault{n}{puntos} \PYGdefault{n}{de} \PYGdefault{n}{la} \PYGdefault{n}{suprficie}
+\PYGdefault{n}{definidos} \PYGdefault{n}{en} \PYGdefault{n}{el} \PYGdefault{n}{archivo} \PYGdefault{n}{de} \PYGdefault{n}{texto} \PYGdefault{n}{salida}\PYGdefault{p}{.}\PYGdefault{n}{txt}
+\PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+
+\PYGdefault{n}{from} \PYGdefault{n}{\PYGdefaultZus{}\PYGdefaultZus{}future\PYGdefaultZus{}\PYGdefaultZus{}} \PYGdefault{n}{import} \PYGdefault{n}{division}\PYGdefault{p}{,} \PYGdefault{n}{print\PYGdefaultZus{}function}
+\PYGdefault{n}{import} \PYGdefault{n}{numpy} \PYGdefault{n}{as} \PYGdefault{n}{np}
+\PYGdefault{n}{import} \PYGdefault{n}{matplotlib}\PYGdefault{p}{.}\PYGdefault{n}{pyplot} \PYGdefault{n}{as} \PYGdefault{n}{plt}
+\PYGdefault{n}{from} \PYGdefault{n}{solidsPy\PYGdefaultZus{}DYN} \PYGdefault{n}{import} \PYGdefault{n}{solidsPy\PYGdefaultZus{}DYN}
+\PYGdefault{n}{import} \PYGdefault{n}{postprocesor} \PYGdefault{n}{as} \PYGdefault{n}{pos}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{U} \PYGdefault{p}{,} \PYGdefault{n}{folder} \PYGdefault{p}{,} \PYGdefault{n}{IBC} \PYGdefault{p}{,} \PYGdefault{n}{ninc} \PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{o}{=} \PYGdefault{n}{solidsPy\PYGdefaultZus{}DYN}\PYGdefault{p}{()}
+\PYGdefault{n}{salida}    \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{n}{loadtxt}\PYGdefault{p}{(}\PYGdefault{n}{folder} \PYGdefault{o}{+} \PYGdefault{err}{\PYGdefaultZsq{}}\PYGdefault{n}{salida}\PYGdefault{p}{.}\PYGdefault{n}{txt}\PYGdefault{err}{\PYGdefaultZsq{}} \PYGdefault{p}{,} \PYGdefault{n}{ndmin} \PYGdefault{o}{=} \PYGdefault{l+m+mi}{1} \PYGdefault{p}{,} \PYGdefault{n}{dtype}\PYGdefault{o}{=}\PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{k+kt}{int}\PYGdefault{p}{)}
+\PYGdefault{n}{npts} \PYGdefault{o}{=} \PYGdefault{n}{pos}\PYGdefault{p}{.}\PYGdefault{n}{sheets}\PYGdefault{p}{(}\PYGdefault{n}{salida} \PYGdefault{p}{,} \PYGdefault{n}{ninc} \PYGdefault{p}{,} \PYGdefault{n}{U} \PYGdefault{p}{,} \PYGdefault{n}{IBC} \PYGdefault{p}{,} \PYGdefault{err}{\PYGdefaultZsq{}}\PYGdefault{n}{respuesta}\PYGdefault{err}{\PYGdefaultZsq{}} \PYGdefault{p}{,} \PYGdefault{n}{folder} \PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{vals} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{p}{.}\PYGdefault{n}{loadtxt}\PYGdefault{p}{(}\PYGdefault{n}{folder} \PYGdefault{o}{+} \PYGdefault{l+s}{\PYGdefaultZdq{}respuesta.txt\PYGdefaultZdq{}}\PYGdefault{p}{)}
+\PYGdefault{n}{plt}\PYGdefault{p}{.}\PYGdefault{n}{close}\PYGdefault{p}{(}\PYGdefault{l+s}{\PYGdefaultZdq{}all\PYGdefaultZdq{}}\PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{amp\PYGdefaultZus{}signal}\PYGdefault{o}{=}\PYGdefault{l+m+mi}{100}
+\PYGdefault{n}{amp\PYGdefaultZus{}shift} \PYGdefault{o}{=}\PYGdefault{l+m+mi}{75}
+\PYGdefault{n}{plt}\PYGdefault{p}{.}\PYGdefault{n}{figure}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{0}\PYGdefault{p}{)}
+\PYGdefault{n}{fig} \PYGdefault{o}{=} \PYGdefault{n}{plt}\PYGdefault{p}{.}\PYGdefault{n}{figure}\PYGdefault{p}{(}\PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{8}\PYGdefault{p}{))}
+\PYGdefault{n}{pos}\PYGdefault{p}{.}\PYGdefault{n}{plot\PYGdefaultZus{}sheet}\PYGdefault{p}{(}\PYGdefault{n}{vals}\PYGdefault{p}{,} \PYGdefault{n}{T}\PYGdefault{p}{,} \PYGdefault{n}{amp\PYGdefaultZus{}signal}\PYGdefault{p}{,} \PYGdefault{n}{amp\PYGdefaultZus{}shift}\PYGdefault{p}{)}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\PYGdefault{n}{plt}\PYGdefault{p}{.}\PYGdefault{n}{figure}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{)}
+\PYGdefault{n}{fig} \PYGdefault{o}{=} \PYGdefault{n}{plt}\PYGdefault{p}{.}\PYGdefault{n}{figure}\PYGdefault{p}{(}\PYGdefault{n}{figsize}\PYGdefault{o}{=}\PYGdefault{p}{(}\PYGdefault{l+m+mi}{10}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{8}\PYGdefault{p}{))}
+\PYGdefault{n}{pos}\PYGdefault{p}{.}\PYGdefault{n}{plot\PYGdefaultZus{}pcolor}\PYGdefault{p}{(}\PYGdefault{n}{vals}\PYGdefault{p}{,} \PYGdefault{n}{T} \PYGdefault{p}{,} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{1}\PYGdefault{p}{,} \PYGdefault{l+m+mi}{1} \PYGdefault{p}{)}
+\end{Verbatim}

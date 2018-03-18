@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{n}{def} \PYGdefault{n}{respuesta}\PYGdefault{p}{(}\PYGdefault{n}{cells}\PYGdefault{p}{,} \PYGdefault{n}{cell\PYGdefaultZus{}data}\PYGdefault{p}{,} \PYGdefault{n}{phy\PYGdefaultZus{}lin}\PYGdefault{p}{)}\PYGdefault{o}{:}
+    \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}Extracts the nodes located at the physical line}
+       \PYGdefault{n}{phy\PYGdefaultZus{}line}
+
+    \PYGdefault{n}{Parameters}
+    \PYGdefault{o}{\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+        \PYGdefault{n+nl}{cell} \PYGdefault{p}{:} \PYGdefault{n}{dictionary}
+            \PYGdefault{n}{Dictionary} \PYGdefault{n}{created} \PYGdefault{n}{by} \PYGdefault{n}{meshio} \PYGdefault{n}{with} \PYGdefault{n}{cells} \PYGdefault{n}{information}\PYGdefault{p}{.}
+        \PYGdefault{n+nl}{cell\PYGdefaultZus{}data}\PYGdefault{p}{:} \PYGdefault{n}{dictionary}
+            \PYGdefault{n}{Dictionary} \PYGdefault{n}{created} \PYGdefault{n}{by} \PYGdefault{n}{meshio} \PYGdefault{n}{with} \PYGdefault{n}{cells} \PYGdefault{n}{data} \PYGdefault{n}{information}\PYGdefault{p}{.}
+        \PYGdefault{n+nl}{phy\PYGdefaultZus{}lin} \PYGdefault{p}{:} \PYGdefault{k+kt}{int}
+            \PYGdefault{n}{Physical} \PYGdefault{n}{line} \PYGdefault{n}{to} \PYGdefault{n}{print} \PYGdefault{n}{nodal} \PYGdefault{n}{histories}\PYGdefault{p}{.}
+
+    \PYGdefault{n}{Returns}
+    \PYGdefault{o}{\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}\PYGdefaultZhy{}}
+        \PYGdefault{n+nl}{nodes\PYGdefaultZus{}carga} \PYGdefault{p}{:} \PYGdefault{k+kt}{int}
+            \PYGdefault{n}{Array} \PYGdefault{n}{with} \PYGdefault{n}{the} \PYGdefault{n}{nodal} \PYGdefault{n}{data} \PYGdefault{n}{corresponding} \PYGdefault{n}{to} \PYGdefault{n}{the} \PYGdefault{n}{physical}
+            \PYGdefault{n}{line} \PYGdefault{n}{phy\PYGdefaultZus{}line}\PYGdefault{p}{.}
+
+    \PYGdefault{l+s}{\PYGdefaultZdq{}\PYGdefaultZdq{}\PYGdefaultZdq{}}
+    \PYGdefault{n}{lines} \PYGdefault{o}{=} \PYGdefault{n}{cells}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZdq{}line\PYGdefaultZdq{}}\PYGdefault{p}{]}
+    \PYGdefault{n}{phy\PYGdefaultZus{}line} \PYGdefault{o}{=} \PYGdefault{n}{cell\PYGdefaultZus{}data}\PYGdefault{p}{[}\PYGdefault{l+s}{\PYGdefaultZdq{}line\PYGdefaultZdq{}}\PYGdefault{p}{][}\PYGdefault{l+s}{\PYGdefaultZdq{}physical\PYGdefaultZdq{}}\PYGdefault{p}{]}
+    \PYGdefault{n}{id\PYGdefaultZus{}carga} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{cont} \PYGdefault{k}{for} \PYGdefault{n}{cont} \PYGdefault{n}{in} \PYGdefault{n}{range}\PYGdefault{p}{(}\PYGdefault{n}{len}\PYGdefault{p}{(}\PYGdefault{n}{phy\PYGdefaultZus{}line}\PYGdefault{p}{))}
+                \PYGdefault{k}{if} \PYGdefault{n}{phy\PYGdefaultZus{}line}\PYGdefault{p}{[}\PYGdefault{n}{cont}\PYGdefault{p}{]} \PYGdefault{o}{==} \PYGdefault{n}{phy\PYGdefaultZus{}lin}\PYGdefault{p}{]}
+    \PYGdefault{n}{nodes\PYGdefaultZus{}carga} \PYGdefault{o}{=} \PYGdefault{n}{lines}\PYGdefault{p}{[}\PYGdefault{n}{id\PYGdefaultZus{}carga}\PYGdefault{p}{]}
+    \PYGdefault{n}{nodes\PYGdefaultZus{}carga} \PYGdefault{o}{=} \PYGdefault{n}{nodes\PYGdefaultZus{}carga}\PYGdefault{p}{.}\PYGdefault{n}{flatten}\PYGdefault{p}{()}
+    \PYGdefault{n}{nodes\PYGdefaultZus{}carga} \PYGdefault{o}{=} \PYGdefault{n}{list}\PYGdefault{p}{(}\PYGdefault{n}{set}\PYGdefault{p}{(}\PYGdefault{n}{nodes\PYGdefaultZus{}carga}\PYGdefault{p}{))}
+    \PYGdefault{n}{nodes\PYGdefaultZus{}carga}\PYGdefault{p}{.}\PYGdefault{n}{sort}\PYGdefault{p}{(}\PYGdefault{n}{reverse}\PYGdefault{o}{=}\PYGdefault{n}{False}\PYGdefault{p}{)}
+    
+    \PYGdefault{k}{return} \PYGdefault{n}{nodes\PYGdefaultZus{}carga}
+\PYGdefault{c+cp}{\PYGdefaultZsh{}}
+\end{Verbatim}

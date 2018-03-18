@@ -1,0 +1,13 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Creating a model in SolidsPy\137DYN }{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Elements data}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Nodal data}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Materials data}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Loading data}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Time dependence of the loading data}{subsection.2.4}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Time dependent data}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Definition of a finite element model for SolidsPy\137DYN using Gmsh}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Geometrical entities}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Physical entities}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Generation of text files from the Gmsh model}{}% 12
+\BOOKMARK [1][-]{section.5}{Visualization of displacement time histories}{}% 13
