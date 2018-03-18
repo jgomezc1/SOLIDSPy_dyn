@@ -9,7 +9,7 @@ The dynamic code uses an implicit time integrator scheme.
 ## Features
 The code allows the user to find the displacement time histories for all the points in the mesh. The response is written into ready to process Paraview VTKs files.
 
-The _repo_ contains 5 main folders:
+The _repo_ contains 3 main folders:
 
 1. `solidspydyn/` which stores the source code in the following modules:
 
@@ -23,21 +23,15 @@ The _repo_ contains 5 main folders:
 2. `meshes/` Complete models including its Gmsh representation and a Python script to produce the required
     (nodes, elements, materials and load) text files ready for input.
 
-3. `docs/` Documentation files in the form of easy-to-follow tutorials
-     showing how to define a SolidsPy model in terms of text files and model
-     creation with [Gmsh](http://gmsh.info/).
+3. `docs/` Documentation files including a User Manual.
 
 ## Installation
-The code is written in Python and it depends on `numpy`, `scipy` and `sympy`.
+The code is written in Python and it depends on `numpy`, `scipy` and `sympy`. To use the code just downloaded and store it in the desired folder.
 
-To install _SolidsPy_ open a terminal and type:
-
-    pip install solidspy
-
-To run the examples with specification of the folder stoing the input files through a GUI you will need to install
+To run the examples with specification of the folder storing the input files through a GUI you will need to install
 [`easygui`](http://easygui.readthedocs.org/en/master/).
 
-To easily generate the required SolidsPy text files out of a [Gmsh](http://gmsh.info/) model
+To easily generate the required SolidsPy_dyn text files out of a [Gmsh](http://gmsh.info/) model
 you will need [`meshio`](https://github.com/nschloe/meshio).
 
 These two can be installed with:
@@ -46,20 +40,11 @@ These two can be installed with:
     pip install meshio
 
 ## How to run a simple model
-After installation, you can run an analysis in 3 easy steps (see [template](./docs/template/README.md)):
-- Create the model (i.e., geometry and mesh) using [Gmsh](http://gmsh.info/). Several meshes are available in the repo [`SOLIDSPy-meshes`](https://github.com/AppliedMechanics-EAFIT/SolidsPy-meshes)
-- Generate the text files (eles.txt, nodes.txt, mater.txt and loads.txt) required by _SolidsPy_ using
+After downloading, you can run an analysis in 3 easy steps:
+- Create the model (i.e., geometry and mesh) using [Gmsh](http://gmsh.info/).
+- Generate the text files (eles.txt, nodes.txt, mater.txt and loads.txt) required by _SolidsPydyn_ using
   a python script based on [`meshio`](https://github.com/nschloe/meshio).
-- Run it in Python as follows:
-
-```python
-import matplotlib.pyplot as plt  # load matplotlib
-from solidspy import solids_GUI  # import our package
-disp = solids_GUI()  # run the Finite Element Analysis
-plt.show()    # plot contours
-```
-
-This would not work properly in Anaconda for Mac OS. In that case is suggested to use an IPython console to run the example.
+- Execute the script named ejecucion_basico.py which is available in the main folder.
 
 ## License
 This project is licensed under the
