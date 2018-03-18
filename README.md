@@ -1,7 +1,7 @@
 # SolidsPy: 2D-Finite Element Analysis with Python
 
 
-![Dynamic response of V-shaped canyon.](./docs/images/canion.png)
+![Dynamic response of V-shaped canyon.](./DOCS/images/canion.png)
 
 This _repo_ contains the dynamic version of the finite element analysis code [SOLIDSPy](https://github.com/AppliedMechanics-EAFIT/SolidsPy).
 The dynamic code uses an implicit time integrator scheme.
