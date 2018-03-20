@@ -371,6 +371,26 @@ def nodal_historyH(idnod , ninc , U , IBC , fname ):
 
 
 def nodal_historyV(idnod , ninc , U , IBC , fname ):
+    """Writes the response time history for the vertical
+    degree of freedom of node idnod. The response is written
+    to the text file as sepcified by fname
+    
+    idnod : scalar (int)
+      Nodal point idntifier.
+    ninc  : intger (int)
+      Integer indicating the number of increments.
+    U     : ndarray (float)
+      Array with the computed displacements.
+    IBC : ndarray (integer)
+      Array with the equation numbers
+    fname: string.
+      String with the file name.
+          
+    Returns
+    -------
+    Writes down the text file with the response.
+
+    """
     
     uh = np.zeros((ninc))
     idof = IBC[idnod , 1]
