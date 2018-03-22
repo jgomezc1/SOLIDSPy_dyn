@@ -415,4 +415,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Paraview files
+*.vtk
+
 
